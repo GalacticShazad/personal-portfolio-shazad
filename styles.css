@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #f44336;
+    --text-color: #fff;
+    --background-color: #333;
+    --white-color: #fff;
+    --black-color: #000;
+    --accent-color: #007bff;
+    --accent-2-color: #28a745;
+    --accent-3-color: #20c997;
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px;
+            justify-content: center;
+            grid-template-areas: 
+            "main social-icons"
+            "main portfolio"
+            "footer footer";
+        }
+
+        .grid {
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 20px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+       .grid-1 {
+            grid-area: main;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+       }
+
+       .grid-2 {
+        grid-area: social-icons;
+       }
+
+       .grid-3 {
+        grid-area: portfolio;
+        padding: 0 20px;
+        height: 330px;
+       }
+
+       .grid-2,
+       .grid-3 {
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+       }
+
+       .grid-2:hover,
+       .grid-3:hover {
+            border: 1px solid var(--white-color);
+       }
+
+       .grid-3 .image-row {
+        justify-content: center;
+       }
+
+       .section-title {
+        text-align: center;
+        margin-bottom: 20px;
+       }
+
+       .main .section-title {
+        margin-top: 0;
+        font-size: 20px;
+       }
+
+       .dots {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        margin-bottom: 10px;
+       }
+
+       .dots span {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: var(--background-color);
+        border-radius: 50%;
+       }
+
+       .logo img {
+        width: 200px;
+        height: 200px;
+        background-image: url("images/logo.png");
+        background-size: cover;
+        background-position: center;
+        border-radius: 50%;
+       }
+
+       .about {
+            text-align: center;
+            margin-bottom: 20px;
+       }
+
+       .about p {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+       }
+
+       .contact {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+       }
+
+       .contact .row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+       }
+
+       .contact .row i {
+        font-size: 24px;
+        margin-right: 5px;
+       }
+
+       .contact .row span {
+        font-size: 16px;
+       }
+
+       .social-icons-grid {
+            margin-bottom: 20px;
+            padding: 20px;
+            height: 280px;
+       }
+
+       .section-title {
+        text-align: center;
+        margin-bottom: 20px;
+       }
+
+       .grid-2 .section-title .dots span,
+       .grid-3 .section-title .dots span {
+        background-color: var(--accent-color);
+       }
+
+       .social-icons .container {
+        display: flex;
+        gap: 10px;
+        justify-content: space-around;
+       }
+
+       .circle-btn i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+       }
+
+       .circle-btn {
+        font-size: 32px;
+        position: relative;
+        background-color: var(--primary-color);
+        width: 20px;
+        height: 20px;
+        padding: 30px;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+       }
+
+       .circle-btn:hover {
+        color: var(--primary-color);
+        background-color: var(--white-color);
+        transform: scale(1.1);
+       }
+
+       .circle-btn:hover i {
+        color: var(--primary-color);
+       }
+
+.portfolio .image-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+    
+.portfolio .image-column {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+    
+.portfolio .image-column img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+    
+    .portfolio .image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(28, 66, 192, 0.5), rgba(0, 0, 0, 0));
+        opacity: 0;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.3s ease;
+    }
+    
+    .portfolio .image-column:hover .image-overlay {
+        opacity: 1;
+    }
+    
+    .portfolio .overlay-content {
+        text-align: center;
+        color: var(--white-color);
+    }
+    
+    .portfolio .overlay-content h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    
+    .portfolio .overlay-content a {
+        color: var(--white-color);
+        font-size: 20px;
+    }
+        
+    .overlay-content a:hover {
+        color: var(--accent-color);
+    }
+
+        footer {
+            color: var(--white-color);
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        footer p {
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+
+        footer .dots {
+            display: flex;
+            gap: 5px;
+            margin: 0 100px;
+        }
+
+        footer .dots span {
+            background-color: var(--accent-color);
+        }
+
+        footer .footer-icons {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        footer .footer-icons i {
+            font-size: 20px;
+        }
+
+/* Responsive Styles */
+
+@media screen and (max-width: 1024px) {
+    .container {
+        grid-template-areas: 
+            "main"
+            "social-icons"
+            "portfolio"
+            "footer";
+    }
+
+    .grid-1 {
+        padding: 20px;
+        margin-top: 50px;
+    }
+
+    .grid-2,
+    .grid-3 {
+        padding: 20px;
+    }
+
+    .social-icons i {
+        margin-bottom: 10px;
+    }
+
+    .image-column {
+        margin-bottom: 10px;
+    }
+
+    .section-title {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .grid-1 {
+        padding: 10px;
+    }
+
+    .grid-2,
+    .grid-3 {
+        padding: 10px;
+    }
+
+    .logo img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .portfolio .image-column {
+        width: 150px;
+        height: 150px;
+    }
+
+    .portfolio .overlay-content h3 {
+        font-size: 16px;
+    }
+
+    .portfolio .overlay-content a {
+        font-size: 18px;
+    }
+
+
+    .about p {
+        font-size: 16px;
+    }
+
+    .contact .row span {
+        font-size: 14px;
+    }
+
+    .social-icons i {
+        font-size: 24px;
+    }
+
+    .portfolio .image-row .image-column img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .overlay-content h3 {
+        font-size: 18px;
+    }
+
+    .overlay-content a {
+        font-size: 20px;
+    }
+}
